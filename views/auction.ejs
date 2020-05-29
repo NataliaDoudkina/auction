@@ -1,0 +1,67 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- CSS -->
+   
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Auction Page</title>
+</head>
+<body>  
+    <h1 id='h1'>Blakes</h1>
+    <div class="message-container">
+                   <div class="message-alert"><%= message%></div>      
+     </div>
+    <div class="errors-container">
+                <% mistakes.forEach(function(item){ %>
+              <div class="errors"><%= item%></div>
+          <%}); %>
+      </div>      
+          <table id='itemsTable' >
+        <tr id='headrow'>
+            <th>Item #</th><th>Item image</th><th>Item description</th><th>Current bid</th>
+         </tr>
+         <% for (let i = 0; i < items.length;   i++) { %>
+            <tr>
+              <form  id='form' method='POST'  action="/auction">    
+              <td><input  name='itemId' type='hidden' value=<%= items[i].item_id %>><%= items[i].item_id %></td>
+              <td><img  width='150' height='200' alt="phone1" src=<%= items[i].item_image %>  ></td>
+              <td><%= items[i].item_description %></td>
+              <td>    
+              <p>Minimum bid is $5<br>Bid has to be higher than current one</p>                            
+               <b> $</b><input id='data' 
+                 name='bid'             
+                 value= <%= items[i].item_current_bid %>
+                  /><button id='bidSubmit' type='submit'>Submit</button>                   
+                </form>  
+                      
+               </td>
+             </tr>    
+           <% } %>
+    </table>
+       
+    <script type="text/javascript">
+     /* function submit() {
+        let data = document.getElementById('data');
+        let value = data.value;
+        let dataValue = data.name;
+             fetch('/auction', {
+            method: 'POST',
+            headers: {
+               Accept: 'application/json',
+              'Content-Type': 'application/json;charset=utf-8'
+    
+            },
+            body: JSON.stringify({
+                value,
+                dataValue
+            })
+        });
+    }
+    let form = document.getElementById('form');
+    form.addEventListener('submit', submit);
+   */
+  </script>
+</body>
+</html>

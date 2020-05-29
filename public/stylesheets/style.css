@@ -1,0 +1,48 @@
+.message-alert, {
+    color: black;
+    font-size:18px
+}
+
+.errors{
+    color:red;
+    font-size:18px;
+    text-align:center;
+}
+ .errors-container{
+    
+     width:40%;
+     margin-left:25%;
+ }
+
+
+#h1{
+    font-family: "Apple Chancery", sans-serif;
+    font-style: italic;
+}
+
+#itemsTable, th,td{
+ border-collapse: collapse;
+  border: 2px solid black;
+  text-align: center;
+}
+ 
+#itemsTable{
+    width:70%;
+    height:70%;
+   } 
+#itemsTable th{
+    background-color:#FF6347;
+    height:65px;
+    font-size:18px;
+}
+#bidSubmit{
+    background-color:red;
+    color:black;
+    border-radius: 5px;
+}
+#data{
+  border-style: solid;
+  border-color: red;
+  width:20%;
+  text-align:center;
+}
